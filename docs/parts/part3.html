@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 3: Use the Azure management portal to set up a resource</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>AZR101 Introduction to Azure</header>
+
+    <section id="main">
+        <h2>Exercise 3: Use the Azure management portal to set up a resource</h2>
+<p>In this exercise, you will learn how to navigate and manage the Azure portal by creating, managing, and deleting a new virtual machine resource. </p>
+<figure class="figure">
+<img src="images/ex3-stats.png" alt="image" style="max-width:50%" />
+</figure>
+<blockquote class="info-quote">You will need an Azure account to complete this exercise.
+</blockquote>
+
+<hr>
+<h2>Create a new Virtual Machine</h2>
+<ol>
+<li>
+Open a web browser and go to the <a href="https://portal.azure.com/#dashboard/private/727bf81d-2272-4ab7-990a-122157f7900d" target="_blank"><strong>Azure Management Portal</strong></a>. You will be presented with a dashboard view of your resources; it is likely empty if you have just created your account.
+</li>
+<li>
+Click on the <strong>+ New</strong> button in the sidebar.
+</li>
+<li>
+Search for <strong>Visual Studio</strong>.
+</li>
+<li>
+Choose one of the VS styles, and click <strong>Create</strong> to create the resource.
+</li>
+<li>
+Fill in the VM details and click <strong>OK</strong>.
+</li>
+</ol>
+<blockquote>
+<strong>Note:</strong> There may be a drop down that says <strong>Deployment Model</strong>, just leave it as &quot;Resource Manager&quot; as that is the newer style which allows you to group resources together so they can be activated, deactivated or even deleted as a group rather than individually (&quot;Classic&quot; mode). 
+</blockquote>
+<figure class="figure">
+<img src="images/ex3-create-resource.png" alt="image" style="max-width:60%" />
+</figure>
+
+<hr>
+<h2>Customize your Virtual Machine</h2>
+<p>With our Virtual Machine basics in place, let's customize its size and storage.</p>
+<ol>
+<li>
+On the <strong>Choose a size</strong> dialog, click <strong>View all</strong> to show other pricing options.
+</li>
+<li>
+<p>Since this is just a test, we will choose the least expensive VM we can create - scroll down and <strong>select</strong> it. It will be named something like <strong>A0 Basic</strong>. It won't run VS very well, but we will be able to at least explore it without taking too much away from our monthly credit. </p>
+<ul>
+<li>The next blade lets you adjust the storage type (disk or SSD), networking options and additional extensions you want to add to the VM such as anti-virus. This also lets you configure the diagnostic metrics gathered from this VM to display on your dashboard. Each option has a help button off to the side that you can click to get a pop-up description (and often a link for more information).</li>
+</ul>
+</li>
+</ol>
+<figure class="figure">
+<img src="images/ex3-resource.png" alt="image" />
+</figure>
+<ol start="3">
+<li>
+Accept the default settings and click <strong>OK</strong>. This will display a final summary blade for you to verify before the VM is created. 
+</li>
+<li>
+Click <strong>Purchase</strong> to create the VM. This will return you to the  dashboard while Azure deploys the virtual machine. This may take several minutes. Once complete, it will display the VM stats.
+</li>
+</ol>
+<figure class="figure">
+<img src="images/ex3-stats.png" alt="image" style="max-width:60%" />
+</figure>
+
+<hr>
+<h2>Connect to your new VM</h2>
+<ol>
+<li>In the toolbar for the Virtual Machine, you can find options to start, restart, stop and delete the VM.  Click the <strong>Connect</strong> button to connect to your VM. This will download a Remote Desktop file <strong>(.rdp)</strong> to connect to this server.</li>
+</ol>
+<figure class="figure">
+<img src="images/ex3-connect.png" alt="image" />
+</figure>
+<ol start="2">
+<li>
+Open the Remote Desktop connection and when prompted for credentials, use the <strong>More Choices</strong> option to enter a username/password combination.
+</li>
+<li>
+<strong>Run</strong> Visual Studio - just to experiment with the machine. Once you are finished playing, <strong>close</strong> the RDP session.
+</li>
+<li>
+<strong>Stop</strong> the VM to stop incurring charges (since it's charged per CPU minute) using the tool bar at the top of the VM stats page.
+</li>
+</ol>
+<blockquote>
+Note: You will need the Remote Desktop client for Windows or Mac installed to connect. 
+</blockquote>
+
+<hr>
+<h2>Make a custom dashboard</h2>
+<p>The initial work area for the Azure portal is the dashboard. This is a highly customizable area where you can organize the things you are interested in quickly viewing when you log into the portal. </p>
+<ol>
+<li>Switch to the Dashboard view by clicking the <strong>Microsoft Azure</strong> logo in the header of the page. Along the top of the dashboard you will find a toolbar where you can create, clone, edit, and/or share your dashboard with other users.</li>
+</ol>
+<figure class="figure">
+<img src="images/ex3-dash-buttons.png" alt="image" />
+</figure>
+<ol start="3">
+<li>Clone the current dashboard by clicking the <strong>Clone</strong> option. </li>
+<li>
+This will make a copy of the current (default) dashboard, and also place you in <strong>editing mode</strong>.
+</li>
+<li>
+<strong>Name</strong> your dashboard.
+</li>
+<li>
+<strong>Move tiles</strong> around on your dashboard. Just click and drag to move them.
+</li>
+<li>
+Resize and remove blocks by clicking the <strong>…</strong> in the title bar of a block.
+</li>
+</ol>
+<figure class="figure">
+<img src="images/ex3-unpin.png" alt="image" />
+</figure>
+<ol start="7">
+<li>When you are finished modifying your new dashboard, click the <strong>Done customizing</strong> button at the top of the page.</li>
+</ol>
+<figure class="figure">
+<img src="images/ex3-edit-mode.png" alt="image" />
+</figure>
+<blockquote>
+<strong>Note</strong> You can re-enter this editing mode for the dashboard later by clicking the <strong>Edit Dashboard</strong> button in the title. Switching between dashboards can be done by clicking the drop-down arrow next to the dashboard name - for example to switch back to the original dashboard we cloned.
+</blockquote>
+
+<hr>
+<h2>Add a sub-tile to the dashboard</h2>
+<p>You can also add sub-tiles to your dashboard.</p>
+<ol>
+<li>
+Open the Visual Studio VM you created earlier.
+</li>
+<li>
+Select one of the blocks and click the push-pin icon in the title bar of the block (or click the <strong>…</strong> context menu element and select <strong>Pin to dashboard</strong>) to put that visual onto your dashboard. 
+</li>
+</ol>
+<figure class="figure">
+<img src="images/ex3-dashboard-pin-vm-block.png" alt="image" />
+</figure>
+
+<hr>
+<h2>Delete the VM resource group</h2>
+<p>As a last step, let's delete the resource group we created for the VM which will remove all the associated assets and resources. This is the best way to completely delete a service - otherwise you must remove and delete each piece separately. </p>
+<ol>
+<li>
+Go back to the main dashboard and click the <strong>Resource groups</strong> button in the left navigation bar to view your resource groups.
+<img src="images/ex3-resource-groups.png" alt="image" />
+</li>
+<li>
+You can either select that resource to open the details, this will then have a delete option in the tool bar along the top, or you can click the <strong>…</strong> context menu at the end of the line which has a delete option. Either choice will result in a new blade displaying a prompt to ensure you really want to delete all the associated resources.
+</li>
+</ol>
+<figure class="figure">
+<img src="images/deleting-the-vm-resource-verify.png" alt="image" style="max-width: 100%;" />
+</figure>
+<ol start="3">
+<li>Verify that you want to complete the deletion by typing the resource name (&quot;Test-Delete&quot; in this case) - this will remove all the resources. It will take a little while to refresh, but eventually all the resources will be removed from your dashboard. Anything left over can be removed by clicking the <strong>X</strong> in the title bar of the box, or using the <strong>…</strong> context menu and selecting <strong>delete</strong>.</li>
+</ol>
+<blockquote>
+<strong>Note:</strong> If you started with a new trial, this will only have a single resource (our VM) in it. Otherwise, you may have other resources - make sure you select the correct one to delete!
+</blockquote>
+
+<hr>
+<h2>Exercise summary</h2>
+<p>In this exercise, you learned how to navigate the Azure portal, created and customized the Azure dashboard and created, managed and deleted a virtual machine resource. </p>
+
+
+        <div class="align-right">
+            <a href="../StartHere.html">Go Back</a>
+        </div>
+
+    </section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/jquery.imagemapster.min.js"></script>
+    <script src="./res/js/imagemap.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+    <footer>Copyright (C) 2018 Xamarin Inc., Microsoft. All rights reserved.<br><a target="_blank" href="http://university.xamarin.com">Visit Xamarin University for more classes and content</a></footer>
+
+</body>
+</html>
